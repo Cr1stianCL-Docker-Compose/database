@@ -1,0 +1,15 @@
+services:
+  mariadb:
+    image: mariadb
+    environment:
+      #DONT NEED TO DEFINE USER, you can use root user to connect, with password: toor
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_PASSWORD: mariadb
+      MYSQL_DATABASE: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./mysqldata:/var/lib/mysql"
+
+volumes:
+  mysqldata:

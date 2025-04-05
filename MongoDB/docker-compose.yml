@@ -1,0 +1,15 @@
+services:
+  mongodb:
+    image: mongo:jammy
+    container_name: mongodb-demo1
+    environment:
+      MONGODB_DATABASE: demo-database
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+
+volumes:
+  mongodb:
+  cache:
+    driver: local
